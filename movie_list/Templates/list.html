@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>  
+    <title>Movie List</title>   
+  </head>
+  <body>
+  	<form method="GET">
+  		<input type="text" name='q' placeholder="Search here...">
+  		<input type="submit" value="Search">
+  	</form>
+  	{% for movie in movies.Search %}
+  	<img src="{{movie.Poster}}">
+  		{{movie.Title}}
+  		<br>
+  		{{movie.Year}}
+  		<a href="{% url 'moviedetail' movie.imdbID %}">Details</a>
+  		<hr>
+  		
+  	{% endfor%}
+  </body>
+</html>
